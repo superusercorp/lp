@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "26c5397e-2163-4643-ae23-13c5eb581e25",
+		"_postman_id": "8074f7be-112b-476e-b96f-e57320b82add",
 		"name": "LendingPad-SampleProject",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30292534"
+		"_exporter_id": "39688752"
 	},
 	"item": [
 		{
@@ -278,11 +278,109 @@
 			"item": [
 				{
 					"name": "Products",
-					"item": []
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "GET",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Clear",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
 				},
 				{
 					"name": "Orders",
-					"item": []
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "GET",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Clear",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
