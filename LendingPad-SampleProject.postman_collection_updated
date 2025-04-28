@@ -282,24 +282,81 @@
 						{
 							"name": "Create",
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"iPhone 14 Pro\",\r\n  \"description\": \"The latest Apple iPhone with advanced features.\",\r\n  \"category\": \"Electronics\",\r\n  \"price\": 999.99,\r\n  \"stockQuantity\": 50,\r\n  \"tags\": [\r\n    \"smartphone\",\r\n    \"apple\",\r\n    \"technology\"\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/products/1422740e-6426-4c46-8445-3f5274a62424/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"1422740e-6426-4c46-8445-3f5274a62424",
+										"create"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "Update",
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"iPhone 14 Pro Max\",\r\n  \"description\": \"Updated description: Bigger screen and improved battery life.\",\r\n  \"category\": \"Electronics\",\r\n  \"price\": 1099.99,\r\n  \"stockQuantity\": 30,\r\n  \"tags\": [\r\n    \"smartphone\",\r\n    \"apple\",\r\n    \"technology\",\r\n    \"premium\"\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/products/1422740e-6426-4c46-8445-3f5274a62424/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"1422740e-6426-4c46-8445-3f5274a62424",
+										"update"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "Delete",
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/1422740e-6426-4c46-8445-3f5274a62424/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"1422740e-6426-4c46-8445-3f5274a62424",
+										"delete"
+									]
+								}
 							},
 							"response": []
 						},
@@ -307,7 +364,19 @@
 							"name": "GET",
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/1422740e-6426-4c46-8445-3f5274a62424",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"1422740e-6426-4c46-8445-3f5274a62424"
+									]
+								}
 							},
 							"response": []
 						},
@@ -315,15 +384,49 @@
 							"name": "List",
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/list?skip=0&take=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"list"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "take",
+											"value": "10"
+										}
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "Clear",
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/clear",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"clear"
+									]
+								}
 							},
 							"response": []
 						}
@@ -335,24 +438,81 @@
 						{
 							"name": "Create",
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerName\": \"John Doe\",\r\n  \"orderDate\": \"2024-04-27T12:00:00\",\r\n  \"status\": \"Pending\",\r\n  \"items\": [\r\n    {\r\n      \"id\": \"a1b2c3d4-e5f6-7890-abcd-1234567890ab\",\r\n      \"productName\": \"iPhone 14 Pro Max\",\r\n      \"unitPrice\": 1099.99,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"id\": \"b2c3d4e5-f6a7-8901-bcde-2345678901bc\",\r\n      \"productName\": \"AirPods Pro\",\r\n      \"unitPrice\": 249.99,\r\n      \"quantity\": 2\r\n    }\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/orders/1422740e-6426-4c46-8445-3f5274a62421/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"1422740e-6426-4c46-8445-3f5274a62421",
+										"create"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "Update",
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerName\": \"John Doe\",\r\n  \"orderDate\": \"2024-04-28T10:30:00\",\r\n  \"status\": \"Completed\",\r\n  \"items\": [\r\n    {\r\n      \"id\": \"a1b2c3d4-e5f6-7890-abcd-1234567890ab\",\r\n      \"productName\": \"iPhone 14 Pro Max\",\r\n      \"unitPrice\": 1099.99,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"id\": \"b2c3d4e5-f6a7-8901-bcde-2345678901bc\",\r\n      \"productName\": \"AirPods Pro\",\r\n      \"unitPrice\": 249.99,\r\n      \"quantity\": 3\r\n    }\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/orders/1422740e-6426-4c46-8445-3f5274a62421/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"1422740e-6426-4c46-8445-3f5274a62421",
+										"update"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "Delete",
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/1422740e-6426-4c46-8445-3f5274a62421/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"1422740e-6426-4c46-8445-3f5274a62421",
+										"delete"
+									]
+								}
 							},
 							"response": []
 						},
@@ -360,7 +520,19 @@
 							"name": "GET",
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/1422740e-6426-4c46-8445-3f5274a62421",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"1422740e-6426-4c46-8445-3f5274a62421"
+									]
+								}
 							},
 							"response": []
 						},
@@ -368,15 +540,49 @@
 							"name": "List",
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/list?skip=0&take=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"list"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "take",
+											"value": "10"
+										}
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "Clear",
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/clear",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"clear"
+									]
+								}
 							},
 							"response": []
 						}
