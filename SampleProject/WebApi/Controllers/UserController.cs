@@ -28,6 +28,12 @@ namespace WebApi.Controllers
         [HttpPost]
         public HttpResponseMessage CreateUser(Guid userId, [FromBody] UserModel model)
         {
+            var existingUser = _getUserService.GetUser(userId);
+            if (existingUser != null)
+            {
+                return Request.CreateResponse(System.Net.HttpStatusCode.Conflict, "User already exists.");
+            }
+
             var user = _createUserService.Create(userId, model.Name, model.Email, model.Type, model.AnnualSalary, model.Tags);
             return Found(new UserData(user));
         }

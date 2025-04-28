@@ -28,6 +28,12 @@ namespace WebApi.Controllers
         [HttpPost]
         public HttpResponseMessage CreateOrder(Guid orderId, [FromBody] OrderModel model)
         {
+            var existingOrder = _getOrderService.GetOrder(orderId);
+            if (existingOrder != null)
+            {
+                return Request.CreateResponse(System.Net.HttpStatusCode.Conflict, "Order already exists.");
+            }
+
             var order = _createOrderService.Create(orderId, model.CustomerName, model.OrderDate, model.Status, model.Items);
             return Found(new OrderData(order));
         }

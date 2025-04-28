@@ -28,6 +28,12 @@ namespace WebApi.Controllers
         [HttpPost]
         public HttpResponseMessage CreateProduct(Guid productId, [FromBody] ProductModel model)
         {
+            var existingProduct = _getProductService.GetProduct(productId);
+            if (existingProduct != null)
+            {
+                return Request.CreateResponse(System.Net.HttpStatusCode.Conflict, "Product already exists.");
+            }
+
             var product = _createProductService.Create(productId, model.Name, model.Description, model.Category, model.Price, model.StockQuantity, model.Tags);
             return Found(new ProductData(product));
         }
