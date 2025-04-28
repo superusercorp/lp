@@ -36,12 +36,36 @@ namespace WebApi.Controllers
         [HttpPost]
         public HttpResponseMessage UpdateUser(Guid userId, [FromBody] UserModel model)
         {
+            if (model == null)
+            {
+                return Request.CreateResponse(System.Net.HttpStatusCode.BadRequest, "Request body cannot be empty.");
+            }
+
+            if (string.IsNullOrWhiteSpace(model.Name))
+            {
+                return Request.CreateResponse(System.Net.HttpStatusCode.BadRequest, "Name is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(model.Email))
+            {
+                return Request.CreateResponse(System.Net.HttpStatusCode.BadRequest, "Email is required.");
+            }
+
             var user = _getUserService.GetUser(userId);
             if (user == null)
             {
                 return DoesNotExist();
             }
-            _updateUserService.Update(user, model.Name, model.Email, model.Type, model.AnnualSalary, model.Tags);
+
+            try
+            {
+                _updateUserService.Update(user, model.Name, model.Email, model.Type, model.AnnualSalary, model.Tags);
+            }
+            catch (Raven.Abstractions.Exceptions.ConcurrencyException)
+            {
+                return Request.CreateResponse(System.Net.HttpStatusCode.Conflict);
+            }
+
             return Found(new UserData(user));
         }
 
